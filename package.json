@@ -1,0 +1,44 @@
+{
+  "name": "haikunator-cli",
+  "version": "1.0.0",
+  "description": "Generate Heroku-like random names from the terminal",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tiaanduplessis/haikunator-cli.git"
+  },
+  "homepage": "https://github.com/tiaanduplessis/haikunator-cli",
+  "bugs": "https://github.com/tiaanduplessis/haikunator-cli/issues",
+  "author": {
+    "name": "Tiaan",
+    "email": "tiaanduplessis@hotmail.com",
+    "url": "tiaan.beer"
+  },
+  "bin": {
+    "haikunator": "index.js"
+  },
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "standard --verbose",
+    "lint:fix": "standard --fix --verbose",
+    "precommit": "npm test"
+  },
+  "keywords": [
+    "haikunator",
+    "cli",
+    "haikunate",
+    "heroku",
+    "names",
+    "random",
+    "haikunator-cli"
+  ],
+  "dependencies": {
+    "get-them-args": "^1.2.1",
+    "haikunator": "^2.0.0"
+  },
+  "devDependencies": {
+    "husky": "^0.13.3",
+    "standard": "^10.0.1"
+  }
+}
