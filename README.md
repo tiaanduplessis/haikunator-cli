@@ -31,8 +31,8 @@
   <a href="http://makeapullrequest.com">
     <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs" />
   </a>
-  <a href="https://www.paypal.me/tiaanduplessis/1">
-    <img src="https://img.shields.io/badge/$-support-green.svg?style=flat-square" alt="Donate" />
+  <a href="https://greenkeeper.io/">
+    <img src="https://badges.greenkeeper.io/tiaanduplessis/haikunator-cli.svg?style=flat-square" alt="Greenkeeper" />
   </a>
 </div>
 <br>
@@ -65,8 +65,6 @@
 </details>
 
 ## About
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/tiaanduplessis/haikunator-cli.svg)](https://greenkeeper.io/)
 
 CLI for [haikunatorjs](https://github.com/Atrox/haikunatorjs).
 
