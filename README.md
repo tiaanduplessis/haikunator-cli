@@ -66,6 +66,8 @@
 
 ## About
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tiaanduplessis/haikunator-cli.svg)](https://greenkeeper.io/)
+
 CLI for [haikunatorjs](https://github.com/Atrox/haikunatorjs).
 
 ## Install
