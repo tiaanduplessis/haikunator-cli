@@ -34,7 +34,7 @@
     "haikunator-cli"
   ],
   "dependencies": {
-    "get-them-args": "^1.2.1",
+    "get-them-args": "^1.3.2",
     "haikunator": "^2.0.0"
   },
   "devDependencies": {
