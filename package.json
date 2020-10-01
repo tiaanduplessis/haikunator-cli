@@ -18,6 +18,10 @@
   "bin": {
     "haikunator": "index.js"
   },
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/TakeScoop/haikunator-cli",
   "scripts": {
     "test": "npm run lint",
     "lint": "standard --verbose",
