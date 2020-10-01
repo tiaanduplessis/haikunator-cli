@@ -1,0 +1,64 @@
+version: 2
+jobs:
+  audit:
+    docker:
+      - image: $DOCKER_REGISTRY_URL/circleci-node-12:3
+        auth:
+          username: $DOCKER_REGISTRY_USERNAME
+          password: $DOCKER_REGISTRY_PASSWORD
+    steps:
+      - setup_remote_docker:
+          docker_layer_caching: true
+      - checkout
+      - run: npm audit --production --audit-level=high
+  build_test:
+    docker:
+      - image: $DOCKER_REGISTRY_URL/circleci-node-12:3
+        auth:
+          username: $DOCKER_REGISTRY_USERNAME
+          password: $DOCKER_REGISTRY_PASSWORD
+    steps:
+      - setup_remote_docker
+      - checkout
+      - run: /log-in-npm
+      - run: npm install
+      - run:
+          name: Create results directories
+          command: mkdir -p ./results/eslint ./results/mocha
+      - run: ./test/scripts/createFakeAWSConfig.sh
+      - run:
+          name: Run ESLint
+          command: npm run --silent lint -- -f junit > ./results/eslint/junit.xml
+      - run:
+          name: Run npm audit
+          command: npm audit --production --audit-level=high
+      - run:
+          name: Run tests
+          command: npm test -- --reporter mocha-circleci-reporter --reporter-options mochaFile=./results/mocha/junit.xml
+      - store_test_results:
+          path: ./results
+  publish:
+    docker:
+      - image: $DOCKER_REGISTRY_URL/circleci-node-12:3
+        auth:
+          username: $DOCKER_REGISTRY_USERNAME
+          password: $DOCKER_REGISTRY_PASSWORD
+    steps:
+      - setup_remote_docker
+      - checkout
+      - run: /log-in-npm
+      - run: npm install
+      - run: $(npm bin)/publish2npm
+workflows:
+  version: 2
+  test_and_publish:
+    jobs:
+      - build_test:
+          context: build
+      - publish:
+          requires:
+            - build_test
+          context: publish
+          filters:
+            branches:
+              only: master

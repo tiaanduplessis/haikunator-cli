@@ -4,9 +4,12 @@
 const args = require('get-them-args')(process.argv.slice(2))
 const Haikunator = require('haikunator')
 
+const adjectives = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet']
+const nouns = ['apple', 'avocado', 'lemon', 'lime', 'orange', 'watermelon']
+
 const haikunator = new Haikunator({
-  adjectives: args.adjectives ? args.adjectives.split(',') : undefined,
-  nouns: args.nouns ? args.nouns.split(',') : undefined,
+  adjectives: args.adjectives ? args.adjectives.split(',') : adjectives,
+  nouns: args.nouns ? args.nouns.split(',') : nouns,
   seed: args.seed,
   defaults: {
     delimiter: args.delimiter,
