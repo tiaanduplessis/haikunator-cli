@@ -1,6 +1,6 @@
 {
   "name": "@scoop/haikunator-cli",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Generate Heroku-like random names from the terminal",
   "license": "MIT",
   "main": "index.js",
