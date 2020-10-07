@@ -4,8 +4,46 @@
 const args = require('get-them-args')(process.argv.slice(2))
 const Haikunator = require('haikunator')
 
-const adjectives = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet', 'clean', 'safe', 'respectful', 'punctual', 'enjoyable', 'favorite']
-const nouns = ['apple', 'avocado', 'lemon', 'lime', 'orange', 'watermelon', 'carpool', 'cancellation', 'detour', 'noshow', 'rider', 'driver', 'waypoint', 'satisfaction', 'reliability', 'visibility', 'impact', 'favorite', 'itinerary', 'timeline', 'reimbursement', 'credit']
+// Alphabetized
+const adjectives = [
+  'blue',
+  'clean',
+  'enjoyable',
+  'green',
+  'indigo',
+  'orange',
+  'punctual',
+  'favorite',
+  'red',
+  'respectful',
+  'safe',
+  'violet',
+  'yellow',
+]
+const nouns = [
+  'apple',
+  'avocado',
+  'carpool',
+  'cancellation',
+  'credit',
+  'detour',
+  'driver',
+  'favorite',
+  'impact',
+  'itinerary',
+  'lemon',
+  'lime',
+  'noshow',
+  'orange',
+  'reimbursement',
+  'reliability',
+  'rider',
+  'satisfaction',
+  'timeline',
+  'visibility',
+  'watermelon',
+  'waypoint',
+]
 
 const haikunator = new Haikunator({
   adjectives: args.adjectives ? args.adjectives.split(',') : adjectives,
